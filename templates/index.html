@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Haggle Score Calculator</title>
+</head>
+
+<h2>Haggle Score Calculator</h2>
+
+<body align="center">
+{% if submit_button == True %}
+<form method="post" action="{{ url_for('operation_result') }}" id="calculator-form">
+    {% for card in cards %}
+    <label for={{card}}>{{card}}</label>
+    <input type="number" min="0" step="1" name={{card}} id={{card}}>
+    <br/>
+    {% endfor %}
+    <br/>
+    <input type="submit" value="submit" style="color: green;"/>
+</form>
+{% endif %}
+
+{% if calculation_success == True %}
+<br/>
+<p>Total score: {{result}}</p>
+
+<a href="/">Recalculate</a>
+
+{% endif %}
+
+</body>
+</html>
