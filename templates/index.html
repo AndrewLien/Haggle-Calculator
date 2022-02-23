@@ -6,18 +6,49 @@
 
 <h2>Haggle Score Calculator</h2>
 
+<form id="form-shower">
+    <p>Game Id #</p>
+    <select id="game_id" onchange="showForm(this.value)">
+        <option value="--" selected="selected">--</option>
+        <option value="form_game1">Form 1</option>
+        <option value="form_game2">Form 2</option>
+    </select>
+</form>
+
+<script>
+function showForm(id) {
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+
 <body align="center">
-{% if submit_button == True %}
-<form method="post" action="{{ url_for('operation_result') }}" id="calculator-form">
-    {% for card in cards %}
-    <label for={{card}}>{{card}}</label>
-    <input type="number" min="0" step="1" name={{card}} id={{card}}>
-    <br/>
-    {% endfor %}
+<form name=form_game1" method="post" action="{{ url_for('operation_result1') }}" id="form_game1" style="display:none">
+    <div>
+        <p>1. How many hearts do you have?</p>
+        <input type="number" min="0" step="1" name=q1_hearts id=q1_hearts>
+    </div>
+    <div>
+        <p>2. How many diamonds do you have?</p>
+        <input type="number" min="0" step="1" name=q2_diamonds id=q2_diamonds>
+    </div>
     <br/>
     <input type="submit" value="submit" style="color: green;"/>
 </form>
-{% endif %}
+</div>
+
+<form name=form_game2" method="post" action="{{ url_for('operation_result2') }}" id="form_game2" style="display:none">
+    <div>
+        <p>1. How many spades do you have?</p>
+        <input type="number" min="0" step="1" name=q1_spades id=q1_spades>
+    </div>
+    <div>
+        <p>2. How many clubs do you have?</p>
+        <input type="number" min="0" step="1" name=q2_clubs id=q2_clubs>
+    </div>
+    <br/>
+    <input type="submit" value="submit" style="color: green;"/>
+</form>
+
 
 {% if calculation_success == True %}
 <br/>
@@ -26,6 +57,12 @@
 <a href="/">Recalculate</a>
 
 {% endif %}
+
+<!--<script>-->
+<!--$("form-shower").on("change", function() {-->
+<!--    $("#" + $(this).val()).show().siblings().hide();-->
+<!--})-->
+<!--</script>-->
 
 </body>
 </html>
