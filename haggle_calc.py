@@ -50,7 +50,6 @@ def operation_result1():
     return render_template(
         "index.html",
         calculation_success=True,
-        # result=result,
         result=result
     )
 

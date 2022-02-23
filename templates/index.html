@@ -29,7 +29,7 @@ function showForm(id) {
     <label for="f1_heart">How many hearts do you have?</label>
         <input type="number" min="0" step="1" id="f1_heart" name="f1_heart">
     <br>
-        <label for="f1_heart_total">Do you have the most hearts in the game?</label>
+        <label for="f1_heart_total">Do you have the most hearts in the game? (Check with other players)</label>
         <select id="f1_heart_total" name="f1_heart_total">
             <option value="--" selected="selected">--</option>
             <option value="1">yes</option>
@@ -96,7 +96,7 @@ function showForm(id) {
     <label for="f2_triples">How many triples do you have?</label>
     <input type="number" min="0" step="1" id="f2_triples" name="f2_triples">
     <br>
-    <label for="f2_straight">Is your entire hand a straight?</label>
+    <label for="f2_straight">Is your entire hand a straight? (5 or more consecutive cards)</label>
     <select id="f2_straight" name="f2_straight">
         <option value="--" selected="selected">--</option>
         <option value="1">yes</option>
@@ -118,15 +118,9 @@ function showForm(id) {
 <br/>
 <p>Total score: {{result}}</p>
 
-<a href="/">Recalculate</a>
+<a href="/">Calculate again</a>
 
 {% endif %}
-
-<!--<script>-->
-<!--$("form-shower").on("change", function() {-->
-<!--    $("#" + $(this).val()).show().siblings().hide();-->
-<!--})-->
-<!--</script>-->
 
 </body>
 </html>
