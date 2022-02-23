@@ -14,7 +14,7 @@
 <form id="form-shower">
     <p>Game Id #</p>
     <select id="game_id" onchange="showForm(this.value)">
-        <option value="--" selected="selected">--</option>
+        <option value="0" selected="selected">--</option>
         <option value="form_game1">Form 1</option>
         <option value="form_game2">Form 2</option>
     </select>
@@ -36,7 +36,7 @@ function showForm(id) {
     <br>
         <label for="f1_heart_total">Do you have the most hearts in the game? (Check with other players)</label>
         <select id="f1_heart_total" name="f1_heart_total">
-            <option value="--" selected="selected">--</option>
+            <option value="0" selected="selected">--</option>
             <option value="1">yes</option>
             <option value="0">no</option>
         </select>
