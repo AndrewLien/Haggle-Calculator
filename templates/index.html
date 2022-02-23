@@ -21,31 +21,95 @@ function showForm(id) {
 }
 </script>
 
-<body align="center">
-<form name=form_game1" method="post" action="{{ url_for('operation_result1') }}" id="form_game1" style="display:none">
-    <div>
-        <p>1. How many hearts do you have?</p>
-        <input type="number" min="0" step="1" name=q1_hearts id=q1_hearts>
-    </div>
-    <div>
-        <p>2. How many diamonds do you have?</p>
-        <input type="number" min="0" step="1" name=q2_diamonds id=q2_diamonds>
-    </div>
-    <br/>
+<br>
+
+<body align="left">
+<form name="form_game1" method="post" action="{{ url_for('operation_result1') }}" id="form_game1" style="display:none">
+    <br>
+    <label for="f1_heart">How many hearts do you have?</label>
+        <input type="number" min="0" step="1" id="f1_heart" name="f1_heart">
+    <br>
+        <label for="f1_heart_total">Do you have the most hearts in the game?</label>
+        <select id="f1_heart_total" name="f1_heart_total">
+            <option value="--" selected="selected">--</option>
+            <option value="1">yes</option>
+            <option value="0">no</option>
+        </select>
+    <br>
+        <label for="f1_diamond">How many diamonds do you have?</label>
+        <input type="number" min="0" step="1" id="f1_diamond" name="f1_diamond">
+    <br>
+        <label for="f1_club">How many clubs do you have?</label>
+        <input type="number" min="0" step="1" id="f1_club" name="f1_club">
+    <br>
+        <label for="f1_spade">How many spades do you have?</label>
+        <input type="number" min="0" step="1" id="f1_spade" name="f1_spade">
+    <br>
+        <label for="f1_king">How many kings do you have?</label>
+        <input type="number" min="0" step="1" id="f1_king" name="f1_king">
+    <br>
+        <label for="f1_queen">How many queens do you have?</label>
+        <input type="number" min="0" step="1" id="f1_queen" name="f1_queen">
+    <br>
+        <label for="f1_jack">How many jacks do you have?</label>
+        <input type="number" min="0" step="1" id="f1_jack" name="f1_jack">
+    <br>
+        <label for="f1_ace">How many aces do you have?</label>
+        <input type="number" min="0" step="1" id="f1_ace" name="f1_ace">
+    <br>
+        <label for="f1_two">How many twos do you have?</label>
+        <input type="number" min="0" step="1" id="f1_two" name="f1_two">
+    <br>
+        <label for="f1_three">How many threes do you have?</label>
+        <input type="number" min="0" step="1" id="f1_three" name="f1_three">
+    <br>
+
     <input type="submit" value="submit" style="color: green;"/>
 </form>
 </div>
 
 <form name=form_game2" method="post" action="{{ url_for('operation_result2') }}" id="form_game2" style="display:none">
-    <div>
-        <p>1. How many spades do you have?</p>
-        <input type="number" min="0" step="1" name=q1_spades id=q1_spades>
-    </div>
-    <div>
-        <p>2. How many clubs do you have?</p>
-        <input type="number" min="0" step="1" name=q2_clubs id=q2_clubs>
-    </div>
-    <br/>
+    <p>If you have more than 7 red cards, remove all black cards, then calculate.</p>
+    <p>If you have less than 4 red cards, remove all red cards, then calculate.</p>
+    <br>
+    <label for="f2_heart">How many hearts do you have?</label>
+    <input type="number" min="0" step="1" id="f2_heart" name="f2_heart">
+    <br>
+    <label for="f2_heart_ace">How many aces of hearts do you have?</label>
+    <input type="number" min="0" step="1" id="f2_heart_ace" name="f2_heart_ace">
+    <br>
+    <label for="f2_diamond">How many diamonds do you have?</label>
+    <input type="number" min="0" step="1" id="f2_diamond" name="f2_diamond">
+    <br>
+    <label for="f2_club">How many clubs do you have?</label>
+    <input type="number" min="0" step="1" id="f2_club" name="f2_club">
+    <br>
+    <label for="f2_spade">How many spades do you have?</label>
+    <input type="number" min="0" step="1" id="f2_spade" name="f2_spade">
+    <br>
+    <label for="f2_seven">How many sevens do you have?</label>
+    <input type="number" min="0" step="1" id="f2_seven" name="f2_seven">
+    <br>
+    <label for="f2_ten">How many tens do you have?</label>
+    <input type="number" min="0" step="1" id="f2_ten" name="f2_ten">
+    <br>
+    <label for="f2_triples">How many triples do you have?</label>
+    <input type="number" min="0" step="1" id="f2_triples" name="f2_triples">
+    <br>
+    <label for="f2_straight">Is your entire hand a straight?</label>
+    <select id="f2_straight" name="f2_straight">
+        <option value="--" selected="selected">--</option>
+        <option value="1">yes</option>
+        <option value="0">no</option>
+    </select>
+    <br>
+    <label for="f2_underfive">Do you have less than 5 cards? (4 or less)</label>
+    <select id="f2_underfive" name="f2_underfive">
+        <option value="--" selected="selected">--</option>
+        <option value="1">yes</option>
+        <option value="0">no</option>
+    </select>
+
     <input type="submit" value="submit" style="color: green;"/>
 </form>
 
