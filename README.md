@@ -1,3 +1,7 @@
 haggle_calculator is a Flask application.
-To run it, export the environment variable FLASK_APP=haggle_calculator.
-TO debug it, export FLASK_ENVIRONMENT=development.
+
+To run:
+export FLASK_APP=haggle_calc
+flask run
+
+TO debug it, also export FLASK_ENVIRONMENT=development
